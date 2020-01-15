@@ -51,6 +51,6 @@ app.use('/api/users', users,apiLimiter);
 const id   = process.env.ID;
 
 app.get('/',(req,res)=>{
-  res.send('hello')
+  res.send('lets-endorse assignment')
 })
 app.listen(secret.port, id, () => console.log(`Listening on port ${secret.port}...`, secret.database, secret.secretKey));

@@ -3,7 +3,9 @@ const express = require('express');
 const app = express();
 const path = require('path');
 var bodyParser = require('body-parser');
+var cors = require('cors')
 app.use(bodyParser.urlencoded({ extended: false }));  
+
 
 var secret = require('./config/db');
 var bodyParser = require('body-parser')
@@ -19,6 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors())
 
 mongoose.connect(secret.database, { useNewUrlParser: true },function(err){
   if(err) throw err;
